@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MovieController;
+use App\Http\Controllers\TrendingMoviesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,4 +27,7 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/trending-movies', [TrendingMoviesController::class, 'index'])->name('trending-movies.index');
+    Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movies.show');
 });
