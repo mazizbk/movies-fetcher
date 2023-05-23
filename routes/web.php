@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Livewire\MoviesEdit;
+use App\Http\Livewire\MoviesIndex;
+use App\Http\Livewire\MoviesCreate;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MovieController;
-use App\Http\Controllers\TrendingMoviesController;
+#use App\Http\Controllers\MovieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +30,10 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('/trending-movies', [TrendingMoviesController::class, 'index'])->name('trending-movies.index');
-    Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movies.show');
+
+    Route::get('/movies', MoviesIndex::class)->name('movies.index')->middleware('throttle:60,1');
+    Route::get('/movies/create', MoviesCreate::class)->name('movies.create');
+    Route::get('/movies/{id}/edit', MoviesEdit::class)->name('movies.edit');
+    
+    #Route::get('/movies/details/{id}', [MovieController::class, 'details'])->name('movies.details');
 });

@@ -8,7 +8,7 @@ use GuzzleHttp\Client;
 class MovieController extends Controller
 {
     //
-    public function show($id)
+    public function details($id)
     {
         //385687
 
