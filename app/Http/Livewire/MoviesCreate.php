@@ -14,15 +14,27 @@ class MoviesCreate extends Component
     {
         $this->validate([
             'title' => 'required',
-            'overview' => 'required',
         ]);
+
+       
 
         Movie::create([
             'title' => $this->title,
             'overview' => $this->overview,
+            'adult'=>0,
+            'tmdb_id'=>rand(99999999,999999999999),
+            'original_language'=> 'fr',
+            'original_title'=> $this->title,
+            'media_type'=> 'movie',
+            'genre_ids'=> json_encode([28,33]),
+            'popularity'=> 1000.222,
+            'release_date'=> date('Y-m-d'),
+            'vote_count'=> 0,
+            'video'=>0,
+            'vote_average'=> 0
         ]);
 
-        session()->flash('success', 'Movie created successfully.');
+        session()->flash('success', 'Film ajouté avec succès');
 
         return redirect()->route('movies.index');
     }

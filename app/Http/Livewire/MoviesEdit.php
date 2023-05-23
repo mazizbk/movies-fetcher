@@ -18,7 +18,6 @@ class MoviesEdit extends Component
         $this->movieId = $movie->id;
         $this->title = $movie->title;
         $this->overview = $movie->overview;
-        // Ajoutez d'autres attributs en fonction de la structure du modèle Movie
     }
 
     public function update()
@@ -33,10 +32,9 @@ class MoviesEdit extends Component
         $movie->update([
             'title' => $this->title,
             'overview' => $this->overview,
-            // Ajoutez d'autres attributs en fonction de la structure du modèle Movie
         ]);
 
-        session()->flash('success', 'Movie updated successfully.');
+        session()->flash('success', 'Film modifié avec succès.');
 
         return redirect()->route('movies.index');
     }

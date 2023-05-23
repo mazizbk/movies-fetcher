@@ -836,24 +836,24 @@
 
 <body class="">
     <div>
-    
+
 
         <div class="max-w-7xl mx-auto p-6 lg:p-8">
-            
-            <div class="mt-16" style="background-color: #e5e7eb !important; padding:5px">
-            @if (Route::has('login'))
-        <div class=" p-6 text-right z-10" style="background-color:#e5e7eb;">
-            @auth
-            <a href="{{ route('trending-movies.index') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-dark focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Les films tendances</a>
-            @else
-            <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-dark focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
 
-            @if (Route::has('register'))
-            <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-dark focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
-            @endif
-            @endauth
-        </div>
-        @endif
+            <div class="mt-16" style="background-color: #e5e7eb !important; padding:5px">
+                @if (Route::has('login'))
+                <div class=" p-6 text-right z-10" style="background-color:#e5e7eb;">
+                    @auth
+                    <a href="{{ route('movies.index') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-dark focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Les films tendances</a>
+                    @else
+                    <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-dark focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Log in</a>
+
+                    @if (Route::has('register'))
+                    <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-400 dark:hover:text-dark focus:outline focus:outline-2 focus:rounded-sm focus:outline-red-500">Register</a>
+                    @endif
+                    @endauth
+                </div>
+                @endif
                 <h1>Liste des films</h1>
 
 
